@@ -54,3 +54,7 @@ app.use("/groups/:id/events", eventRoutes);
 app.listen(3000, function(){
   console.log("Gamelan Book has started");
 });
+
+// app.listen(process.env.PORT, process.env.IP, function(req, ROUTES){
+//   console.log("Gamelan Book has started");
+// });
