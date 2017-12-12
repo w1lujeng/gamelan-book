@@ -19,8 +19,8 @@ var indexRoutes = require("./routes/index");
 
 console.log(process.env.DATABASEURL);
 mongoose.Promise = global.Promise;
-// mongoose.connect(process.env.DATABASEURL, {useMongoClient: true});
-mongoose.connect("mongodb://w1lujeng:2i232i26@ds044917.mlab.com:44917/gamelan-book", {useMongoClient: true});
+mongoose.connect(process.env.DATABASEURL, {useMongoClient: true});
+// mongoose.connect("mongodb://w1lujeng:2i232i26@ds044917.mlab.com:44917/gamelan-book", {useMongoClient: true});
 
 // process.env.DATABASEURL
 
