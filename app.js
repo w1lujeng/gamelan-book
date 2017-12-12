@@ -20,7 +20,6 @@ var indexRoutes = require("./routes/index");
 
 mongoose.Promise = global.Promise;
 mongoose.connect(process.env.DATABASEURL, {useMongoClient: true});
-("mongodb://w1lujeng:2i232i26@ds044917.mlab.com:44917/gamelan-book", {useMongoClient: true});
 
 //================== or line 23 like this
 //var url = process.env.DATABASEURL || "mongodb://localhost/gamelanbook";
