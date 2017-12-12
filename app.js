@@ -17,12 +17,15 @@ var eventRoutes = require("./routes/events");
 var groupRoutes = require("./routes/groups");
 var indexRoutes = require("./routes/index");
 
-console.log(process.env.DATABASEURL);
+
 mongoose.Promise = global.Promise;
 mongoose.connect(process.env.DATABASEURL, {useMongoClient: true});
-// mongoose.connect("mongodb://w1lujeng:2i232i26@ds044917.mlab.com:44917/gamelan-book", {useMongoClient: true});
+("mongodb://w1lujeng:2i232i26@ds044917.mlab.com:44917/gamelan-book", {useMongoClient: true});
 
-// process.env.DATABASEURL
+//================== or line 23 like this
+//var url = process.env.DATABASEURL || "mongodb://localhost/gamelanbook";
+// mongoose.connect(url)
+
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
@@ -54,11 +57,11 @@ app.use("/", indexRoutes);
 app.use("/groups", groupRoutes);
 app.use("/groups/:id/events", eventRoutes);
 
-
-// app.listen(3000, function(){
-//   console.log("Gamelan Book has started");
-// });
-
+// ====shouldn't need this
+app.listen(3000, function(){
+  console.log("Gamelan Book has started");
+});
+//
 app.listen(process.env.PORT, process.env.IP, function(){
   console.log("Gamelan Book has started");
 });
