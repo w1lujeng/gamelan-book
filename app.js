@@ -17,9 +17,13 @@ var eventRoutes = require("./routes/events");
 var groupRoutes = require("./routes/groups");
 var indexRoutes = require("./routes/index");
 
+console.log(process.env.DATABASEURL);
 mongoose.Promise = global.Promise;
-// mongoose.connect("mongodb://localhost/gamelanbook", {useMongoClient: true});
+// mongoose.connect(process.env.DATABASEURL, {useMongoClient: true});
 mongoose.connect("mongodb://w1lujeng:2i232i26@ds044917.mlab.com:44917/gamelan-book", {useMongoClient: true});
+
+// process.env.DATABASEURL
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
@@ -55,6 +59,6 @@ app.use("/groups/:id/events", eventRoutes);
 //   console.log("Gamelan Book has started");
 // });
 
-app.listen(process.env.PORT, process.env.IP, function(req, ROUTES){
+app.listen(process.env.PORT, process.env.IP, function(){
   console.log("Gamelan Book has started");
 });
