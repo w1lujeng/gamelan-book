@@ -18,7 +18,8 @@ var groupRoutes = require("./routes/groups");
 var indexRoutes = require("./routes/index");
 
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost/gamelanbook", {useMongoClient: true});
+// mongoose.connect("mongodb://localhost/gamelanbook", {useMongoClient: true});
+mongoose.connect("mongodb://w1lujeng:2i232i26@ds044917.mlab.com:44917/gamelan-book", {useMongoClient: true});
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
